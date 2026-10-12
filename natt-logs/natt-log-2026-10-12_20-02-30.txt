@@ -1,0 +1,103 @@
+[20:02:30][PluginLoader][WARNING] Plugins directory not found.
+[20:02:30][NATTCore][INFO] NATT CORE initialization done
+Version: 1.7.0 
+Configuration path: https://gitlab.com/ap5vs/test-config/email-sender-config/-/raw/main/test-config-1.yaml?ref_type=heads
+Configuration loading mode: FROM URL
+[20:02:30][NATTCore][INFO] Working directory path: /home/dencho/Code/AP5ST/EmailSender/email-sender
+[20:02:30][NATTCore][INFO] Start loading of the configuration file ...
+[20:02:31][NetworkIO][INFO] Yaml data has been loaded from network location (https://gitlab.com/ap5vs/test-config/email-sender-config/-/raw/main/test-config-1.yaml?ref_type=heads)
+[20:02:31][NATTCore][INFO] Configuration loading done
+[20:02:31][NATTCore][INFO] Start building test structure according to the configuration ...
+[20:02:31][NATTCore][INFO] Test structure ...
+[20:02:31][NATTCore][INFO] Test structure building done
+[20:02:31][NATTCore][INFO] Start test executing ...
+[20:02:32][TestReportGenerator][INFO] Extenet reports generated. Final report will be saved to file: test_report.html
+[20:02:32][NATTCore][INFO] Starts execution on the root keyword  ...
+[20:02:32][MessageBuffer][INFO] Message buffer created for module with name: server-1
+[20:02:32][SMTPEmailServer][INFO] (server-1) SMTP Email Server is listening on port: 9999
+[20:02:32][TestSuiteKw][INFO] Test case 'Test odeslání emailu' starts executing now
+[20:02:32][MessageBuffer][INFO] Message buffer created for module with name: default
+[20:02:32][ExternalProgramRunner][INFO] (default) Run external app with command: java -jar app/build/libs/app.jar localhost 9999 sender@email.com recipient@email.com Subject1 'Text Message'
+[20:02:32][ProcessManager][INFO] New PID (97123) added to file
+[20:02:32][WaitUntilKw][INFO] Waiting for action. Actions count: 1, Time out: 5000 ms
+[20:02:32][MessageBuffer][INFO] Message added to buffer [ Mod: default | Tag:  ] Content: '220 /127.0.0.1 GreenMail SMTP Service v1.6.1 ready'
+[20:02:32][MessageBuffer][INFO] Message added to buffer [ Mod: default | Tag:  ] Content: '250-/127.0.0.1'
+[20:02:32][MessageBuffer][INFO] Message added to buffer [ Mod: default | Tag:  ] Content: '250 AUTH PLAIN LOGIN'
+[20:02:32][MessageBuffer][INFO] Message added to buffer [ Mod: default | Tag:  ] Content: '250 OK'
+[20:02:32][MessageBuffer][INFO] Message added to buffer [ Mod: default | Tag:  ] Content: '250 OK'
+[20:02:32][MessageBuffer][INFO] Message added to buffer [ Mod: default | Tag:  ] Content: '354 Start mail input; end with <CRLF>.<CRLF>'
+[20:02:32][MessageBuffer][INFO] Message added to buffer [ Mod: default | Tag:  ] Content: '250 OK'
+[20:02:32][ProcessManager][INFO] PID (97123) removed from file
+[20:02:32][ExternalProgramRunner][INFO] (default) External application ends with exit code 0
+[20:02:32][MessageBuffer][INFO] Message added to buffer [ Mod: server-1 | Tag: Subject1 ] Content: 'Text Message'
+[20:02:32][WaitUntilKw][INFO] Action triggered from module 'server-1'
+[20:02:32][NATTContext][INFO] Data has been stored in to the variable 'server-1-action-msg'. Data value: Text Message
+[20:02:32][WaitUntilKw][INFO] Action was invoked. Elapsed time: 386 ms
+[20:02:32][NATTContext][INFO] Data has been stored in to the variable 'var-1'. Data value: 1
+[20:02:32][WaitKw][INFO] Waiting: 500 ms
+[20:02:33][TestSuiteKw][INFO] Test suite 'Zakladní test odesílání Emailů' - Test case 'Test odeslání emailu' passed
+[20:02:33][MessageBuffer][INFO] Message buffer cleared
+[20:02:33][TestSuiteKw][INFO] Test case 'Test obsahu emailu 1' starts executing now
+[20:02:33][ExternalProgramRunner][INFO] (default) Run external app with command: java -jar app/build/libs/app.jar localhost 9999 sender@email.com recipient@email.com Subject1 'Text Message'
+[20:02:33][ProcessManager][INFO] New PID (97164) added to file
+[20:02:33][WaitUntilKw][INFO] Waiting for action. Actions count: 1, Time out: 5000 ms
+[20:02:34][MessageBuffer][INFO] Message added to buffer [ Mod: default | Tag:  ] Content: '220 /127.0.0.1 GreenMail SMTP Service v1.6.1 ready'
+[20:02:34][MessageBuffer][INFO] Message added to buffer [ Mod: default | Tag:  ] Content: '250-/127.0.0.1'
+[20:02:34][MessageBuffer][INFO] Message added to buffer [ Mod: default | Tag:  ] Content: '250 AUTH PLAIN LOGIN'
+[20:02:34][MessageBuffer][INFO] Message added to buffer [ Mod: default | Tag:  ] Content: '250 OK'
+[20:02:34][MessageBuffer][INFO] Message added to buffer [ Mod: default | Tag:  ] Content: '250 OK'
+[20:02:34][MessageBuffer][INFO] Message added to buffer [ Mod: default | Tag:  ] Content: '354 Start mail input; end with <CRLF>.<CRLF>'
+[20:02:34][MessageBuffer][INFO] Message added to buffer [ Mod: default | Tag:  ] Content: '250 OK'
+[20:02:34][MessageBuffer][INFO] Message added to buffer [ Mod: server-1 | Tag: Subject1 ] Content: 'Text Message'
+[20:02:34][WaitUntilKw][INFO] Action triggered from module 'server-1'
+[20:02:34][NATTContext][INFO] Data has been stored in to the variable 'server-1-action-msg'. Data value: Text Message
+[20:02:34][WaitUntilKw][INFO] Action was invoked. Elapsed time: 212 ms
+[20:02:34][NATTContext][INFO] Data has been stored in to the variable 'var-1'. Data value: Text Message
+[20:02:34][WaitKw][INFO] Waiting: 500 ms
+[20:02:34][ProcessManager][INFO] PID (97164) removed from file
+[20:02:34][ExternalProgramRunner][INFO] (default) External application ends with exit code 0
+[20:02:34][TestSuiteKw][INFO] Test suite 'Zakladní test odesílání Emailů' - Test case 'Test obsahu emailu 1' passed
+[20:02:34][MessageBuffer][INFO] Message buffer cleared
+[20:02:35][TestSuiteKw][INFO] Test case 'Test obsahu emailu 2' starts executing now
+[20:02:35][ExternalProgramRunner][INFO] (default) Run external app with command: java -jar app/build/libs/app.jar localhost 9999 sender@email.com recipient@email.com Subject1111 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin mattis lacinia justo. Curabitur bibendum justo non orci. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.'
+[20:02:35][ProcessManager][INFO] New PID (97187) added to file
+[20:02:35][WaitUntilKw][INFO] Waiting for action. Actions count: 1, Time out: 5000 ms
+[20:02:35][MessageBuffer][INFO] Message added to buffer [ Mod: default | Tag:  ] Content: '220 /127.0.0.1 GreenMail SMTP Service v1.6.1 ready'
+[20:02:35][MessageBuffer][INFO] Message added to buffer [ Mod: default | Tag:  ] Content: '250-/127.0.0.1'
+[20:02:35][MessageBuffer][INFO] Message added to buffer [ Mod: default | Tag:  ] Content: '250 AUTH PLAIN LOGIN'
+[20:02:35][MessageBuffer][INFO] Message added to buffer [ Mod: default | Tag:  ] Content: '250 OK'
+[20:02:35][MessageBuffer][INFO] Message added to buffer [ Mod: default | Tag:  ] Content: '250 OK'
+[20:02:35][MessageBuffer][INFO] Message added to buffer [ Mod: default | Tag:  ] Content: '354 Start mail input; end with <CRLF>.<CRLF>'
+[20:02:35][MessageBuffer][INFO] Message added to buffer [ Mod: default | Tag:  ] Content: '250 OK'
+[20:02:35][MessageBuffer][INFO] Message added to buffer [ Mod: server-1 | Tag: Subject1111 ] Content: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin mattis lacinia justo. Curabitur bibendum justo non orci. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.'
+[20:02:35][WaitUntilKw][INFO] Action triggered from module 'server-1'
+[20:02:35][NATTContext][INFO] Data has been stored in to the variable 'server-1-action-msg'. Data value: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin mattis lacinia justo. Curabitur bibendum justo non orci. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+[20:02:35][WaitUntilKw][INFO] Action was invoked. Elapsed time: 283 ms
+[20:02:35][NATTContext][INFO] Data has been stored in to the variable 'var-1'. Data value: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin mattis lacinia justo. Curabitur bibendum justo non orci. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+[20:02:35][WaitKw][INFO] Waiting: 500 ms
+[20:02:35][ProcessManager][INFO] PID (97187) removed from file
+[20:02:35][ExternalProgramRunner][INFO] (default) External application ends with exit code 0
+[20:02:36][TestSuiteKw][INFO] Test suite 'Zakladní test odesílání Emailů' - Test case 'Test obsahu emailu 2' passed
+[20:02:36][MessageBuffer][INFO] Message buffer cleared
+[20:02:36][TestSuiteKw][INFO] Test case 'Test odeslání neplatného emailu' starts executing now
+[20:02:36][ExternalProgramRunner][INFO] (default) Run external app with command: java -jar app/build/libs/app.jar localhost 9999 sender@email.com recipient@email.com
+[20:02:36][ProcessManager][INFO] New PID (97208) added to file
+[20:02:36][WaitKw][INFO] Waiting: 3000 ms
+[20:02:36][ProcessManager][INFO] PID (97208) removed from file
+[20:02:36][ExternalProgramRunner][WARNING] (default) External application ends with error: 1
+[20:02:36][ExternalProgramRunner][WARNING] (default) Error message from external application: Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 4 out of bounds for length 4
+	at utb.fai.App.main(App.java:10)
+
+[20:02:39][NATTContext][INFO] Data has been stored in to the variable 'var-1'. Data value: 0
+[20:02:39][WaitKw][INFO] Waiting: 500 ms
+[20:02:40][TestSuiteKw][INFO] Test suite 'Zakladní test odesílání Emailů' - Test case 'Test odeslání neplatného emailu' passed
+[20:02:40][MessageBuffer][INFO] Message buffer cleared
+[20:02:41][MessageBuffer][INFO] Message buffer cleared
+[20:02:41][MessageBuffer][INFO] Message buffer cleared
+[20:02:41][SMTPEmailServer][INFO] (server-1) SMTP email server [server-1] terminated
+[20:02:41][NATTCore][INFO] Test executing finished
+[20:02:41][NATTCore][INFO] Start generating test report
+[20:02:41][TestReportGenerator][INFO] Report saved to file
+[20:02:41][NATTCore][INFO] All test cases passed.
+[20:02:41][NATTCore][INFO] Final score: 4.000000
+[20:02:41][NATTCore][INFO] Testing done. Leaving status: PASSED
